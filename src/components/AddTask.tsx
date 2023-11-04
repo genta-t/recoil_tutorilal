@@ -1,11 +1,13 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
 import { addTitleState, addTitleStateLength } from '../states/addTitleState';
+import AddTaskList from './AddTaskList';
 import "./Task.css";
 
 const AddTask = () => {
   const addTitle = useRecoilValue(addTitleState);
   const addTitleLength = useRecoilValue(addTitleStateLength);
+
 
   return (
     <div className="taskField">
@@ -13,7 +15,7 @@ const AddTask = () => {
       <ul>
         {addTitle.map((a) => {
           return (
-            <li key={a.id}>{a.title}</li>
+            <AddTaskList key={a.id} task={a} />
           )
         })}
       </ul>
