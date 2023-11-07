@@ -28,6 +28,8 @@ const AddTaskList = ({task}: TypeTaskProps) => {
   };
 
   const handleDelete = async () => {
+    const deleteTitleList = addTitle.filter((a) => a.id !== task.id);
+    setAddTitle(deleteTitleList);
     setIsEditing(true);
   };
 
